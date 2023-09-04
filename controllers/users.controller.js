@@ -33,5 +33,14 @@ const updateUser = (req,res) =>{
 
     res.status(200).json(users);
 }
+// delete user 
+const deleteUser = (req,res) =>{
+    
+    const userid = req.params.id;
+    
+    users = users.filter((user) => user.id != userid)
 
-module.exports = {getAllUsers, createUser , updateUser};
+    res.status(200).json(users);
+}
+
+module.exports = {getAllUsers, createUser , updateUser , deleteUser};
