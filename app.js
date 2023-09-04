@@ -3,10 +3,16 @@ const app = express();
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const usersRouter = require("./routes/users.route");
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+
+app.use("/users",usersRouter)
+
 
 //home route
 app.get("/",(req,res) => {
